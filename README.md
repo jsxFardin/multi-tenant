@@ -4,6 +4,8 @@ Multi-tenancy is the ability to provide your service to multiple users (tenants)
 
 #### package : [tenancy](https://tenancyforlaravel.com/docs/v3/quickstart)
 
+#### Custom DNS : [Wildcard DNS records ](https://developers.cloudflare.com/dns/manage-dns-records/reference/wildcard-dns-records/)
+
 ### Instalation Process
 
 
@@ -44,3 +46,8 @@ $ npm run hot
     >>> $tenant2 = App\Models\Tenant::create(['id' => 'bar']);
     >>> $tenant2->domains()->create(['domain' => 'bar.localhost']);
 ```
+
+### Trying it out
+
+Now we visit foo.localhost in our browser, replace localhost with one of the values of central_domains in the file config/tenancy.php as modified previously. We should see a dump of the users table where we see some user. If we visit bar.localhost, we should see a different user.
+
